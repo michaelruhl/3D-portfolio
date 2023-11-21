@@ -16,7 +16,7 @@ const renderContent = {
   1: (
     <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
       Hi, I'm <span className="font-semibold">Michael</span>👋
-      <br />A Software Engineer from Ottawa, Canada
+      <br />A Software Engineer from Ontario, Canada
     </h1>
   ),
   2: (
@@ -28,7 +28,7 @@ const renderContent = {
   ),
   3: (
     <InfoBox
-      text="Worked with many tech stacks and picked up many skills along the way."
+      text="Take a look at my project showcase! I'm always working on something new."
       link="/projects"
       btnText="Visit my portfolio"
     />

@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import Loader from "../components/Loader";
 import Island from "../models/Island";
@@ -7,10 +7,29 @@ import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
 
+import sakura from '../assets/sakura.mp3'
+import { soundoff, soundon } from "../assets/icons";
 
 const Home = () => {
+
+  const audioRef = useRef(new Audio(sakura));
+  audioRef.current.volume = 0.4;
+  audioRef.current.loop = true;
+
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false)
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1)
+
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    } 
+
+    return () => {
+      audioRef.current.pause();
+    }
+  }, [isPlayingMusic]);
+  
 
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -46,6 +65,15 @@ const Home = () => {
 
   return (
     <section className="w-full h-screen relative">
+      <div className="absolute w-full top-10 h-5 z-10 flex  items-center justify-center">
+        
+        <div className="flex w-relative bg-white p-2 rounded-xl justify-center">
+
+    <p className="font-medium sm:text-xl rounded-xl border-solid blue-gradient_text text-center">Click and drag left or right to navigate my portfolio!</p>
+        </div>
+    
+  
+      </div>
       
   <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
     {currentStage && <HomeInfo currentStage={currentStage} />}
@@ -80,13 +108,22 @@ const Home = () => {
             setIsRotating={setIsRotating}
           />
           <Plane 
-          planeScale={planeScale}
-            planePosition={planePosition}
+          scale={planeScale}
+            position={planePosition}
             isRotating={isRotating}
             rotation={[0,20,0]}
           />
         </Suspense>
       </Canvas>
+
+      <div className="absolute bottom-2 left-2">
+        <img 
+        src={!isPlayingMusic ? soundoff : soundon}
+        alt="Sound"
+        className="w-10 h-10 cursor-pointer object-contain"
+        onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
+      </div>
     </section>
   );
 };

@@ -26,10 +26,19 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import ruby from './ruby.svg'
+import python from './python.svg'
+import pg from './pg.png'
+import vite from './vite.png'
+import bootstrap from './bootstrap.png'
+
+
 
 export {
     css,
+    
     express,
+    bootstrap,
     git,
     github,
     html,
@@ -37,9 +46,11 @@ export {
     mongodb,
     motion,
     mui,
+    pg,
     nextjs,
     nodejs,
     react,
+    ruby,
     redux,
     sass,
     tailwindcss,
@@ -48,12 +59,14 @@ export {
     twitter,
     car,
     estate,
+    python,
     pricewise,
     snapgram,
     summiz,
     threads,
     arrow,
     contact,
+    vite,
     soundon,
     soundoff
 }
