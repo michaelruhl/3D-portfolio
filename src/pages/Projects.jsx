@@ -340,8 +340,8 @@ const Projects = () => {
             Here is the first online portfolio I created to showcase my projects, skills, and experience! Take a look and see how far I've come!
             </h4>
             <p className="text-gray-800 py-1 dark:text-blue-500 flex justify-center">
-              <b className="pr-1">Tech Stack:</b> Next, Clerk, Tailwind,
-              HTML, Typescript, Git, Node, Vercel, MongoDB
+              <b className="pr-1">Tech Stack:</b> Next, Tailwind,
+              HTML, Typescript, Git, Node, Vercel
             </p>
           </div>
           <div className="basis-1/3 flex-1  hover:shadow-2xl hover:shadow-blue-500">
