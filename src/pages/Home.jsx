@@ -103,21 +103,21 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
-      <div className="absolute w-full bottom-10 h-5 z-10 flex  items-center justify-center">
-        <div className="flex w-relative bg-white p-2 rounded-xl justify-center">
-          <p className="font-medium sm:text-xl rounded-xl border-solid blue-gradient_text text-center">
-            Click and drag left or right to navigate my portfolio!
-          </p>
-        </div>
-      </div>
 
-      <div className="absolute bottom-2 left-2">
+      <div className="absolute bottom-16 left-2">
         <img
           src={!isPlayingMusic ? soundoff : soundon}
           alt="Sound"
           className="w-10 h-10 cursor-pointer object-contain"
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
         />
+      </div>
+      <div className="absolute w-full bottom-10 h-5 z-10 flex  items-center justify-center">
+        <div className="flex w-relative bg-white p-2 rounded-xl justify-center">
+          <p className="font-medium sm:text-xl rounded-xl border-solid blue-gradient_text text-center">
+            Click and drag left or right to navigate my portfolio!
+          </p>
+        </div>
       </div>
     </section>
   );
